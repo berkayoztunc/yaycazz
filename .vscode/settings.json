@@ -1,0 +1,5 @@
+{
+    "rust-analyzer.linkedProjects": [
+        "./programs/yaycazz/Cargo.toml"
+    ]
+}
