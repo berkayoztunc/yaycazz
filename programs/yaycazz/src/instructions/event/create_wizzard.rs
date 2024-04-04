@@ -3,9 +3,11 @@ use crate::mint;
 use crate::state::wizzard::Wizzard;
 use crate::state::wizzard::OnChainTokenomics;
 use crate::{assert_non_zero, assert_not_expired, assert_not_locked};
+use anchor_lang::accounts::account_info;
 use anchor_lang::prelude::*;
 use anchor_spl::associated_token::AssociatedToken;
 use anchor_spl::token::{burn, transfer, Burn, Mint, Token, TokenAccount, Transfer};
+use solana_program::program::invoke_signed;
 
 #[derive(Accounts)]
 pub struct CreateWizzard<'info> {
@@ -19,6 +21,12 @@ pub struct CreateWizzard<'info> {
         associated_token::authority = user,
     )]
     pub user_x: Box<Account<'info, TokenAccount>>,
+    #[account(
+        mut,
+        associated_token::mint = wizzard.mint_y,
+        associated_token::authority = user,
+    )]
+    pub user_y: Box<Account<'info, TokenAccount>>,
     #[account(
         init,
         payer = user,
@@ -86,46 +94,11 @@ impl<'info> CreateWizzard<'info> {
         let ctx = CpiContext::new(self.token_program.to_account_info(), cpi_accounts);
         transfer(ctx, self.mint_x.supply)
     }
-    // define tokenomics
-    pub fn define_tokenomics(&mut self, data:Vec<OnChainTokenomics>) -> Result<()> {
-        if let Some(tokenomics_vec) = &mut self.wizzard.tokenomics {
-            for tokenomic in tokenomics_vec {
-                tokenomic.status = false;
-            }
-        }
-        self.wizzard.tokenomics = Some(data);
-        self.wizzard.state = 1;
-        Ok(())
-    }
-    // select approvement
-    pub fn select_approvement(&mut self, state:bool) -> Result<()> {
-        self.wizzard.is_request_approvement = state;
-        self.wizzard.state = 2;
-        Ok(())
-    }
-    // set mint events
-    pub fn set_mint_events(&mut self,
-        provider:u8,
-        mint_type:u8,
-        mint_price:u64,
-        mint_supply:u64,
-    ) -> Result<()> {
-        self.wizzard.provider = provider;
-        self.wizzard.mint_type = mint_type;
-        self.wizzard.mint_price = mint_price;
-        self.wizzard.mint_supply = mint_supply;
-        self.wizzard.state = 3;
-        Ok(())
-    }
-    // set event time
-    pub fn set_event_time(&mut self,start:u64,end:u64) -> Result<()> {
-        self.wizzard.start_block = start;
-        self.wizzard.end_block = end;
-        self.wizzard.state = 5;
-        Ok(())
-    }
-    // create AMM
+    
     pub fn create_amm(&mut self) -> Result<()> {
+        
+
+
         Ok(())
     }
     // cancel event
