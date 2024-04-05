@@ -36,5 +36,3 @@ Each instruction module contains the logic and operations necessary to execute s
 
 
 
-
-git submodule add git@github.com:berkayoztunc/fragment-ui.git app/yaycazz-frontend
