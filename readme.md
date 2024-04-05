@@ -33,3 +33,8 @@ The `yaycazz` program includes a `state` directory designed to define and manage
 - **Wizzard**: Manages the state and functionalities associated with "wizzard" entities. The specific role and capabilities of a wizzard may be unique to the application's domain.
 
 Each instruction module contains the logic and operations necessary to execute specific actions within the `yaycazz` application. The modular structure ensures a clear separation of concerns and facilitates the development, testing, and maintenance of the codebase.
+
+
+
+
+git submodule add git@github.com:berkayoztunc/fragment-ui.git app/yaycazz-frontend
