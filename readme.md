@@ -1,4 +1,13 @@
+![alt text](/screenshots/banner.png "Title")
+
+# Yaycazz
+
+Introducing Yaycazz, a new token launch platform built on the Solana blockchain, founded on the principles of freedom and trust. 
+
+
 # Instructions Overview
+
+
 
 The `yaycazz` program includes a set of instructions organized into two main categories: `amm` (Automated Market Maker) and `event`. Each category is designed to handle specific functionalities within the application. Below is a detailed overview of each instruction module:
 
@@ -33,3 +42,6 @@ The `yaycazz` program includes a `state` directory designed to define and manage
 - **Wizzard**: Manages the state and functionalities associated with "wizzard" entities. The specific role and capabilities of a wizzard may be unique to the application's domain.
 
 Each instruction module contains the logic and operations necessary to execute specific actions within the `yaycazz` application. The modular structure ensures a clear separation of concerns and facilitates the development, testing, and maintenance of the codebase.
+
+
+![alt text](/screenshots/create.png "Create Form V0.0.3")

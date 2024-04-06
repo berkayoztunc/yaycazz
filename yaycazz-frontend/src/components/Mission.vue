@@ -78,7 +78,7 @@
             <h1 class="text-base font-semibold leading-7 text-indigo-600"> Seamless Minting Process</h1>
         </div>
         <div class="grid grid-cols-2  gap-6 mt-10">
-            <img src="/rocket.webp" class="r">
+            <img src="/rocket.webp" class="rounded rounded-xl ">
             <div class="p-4 flex flex-col">
 
 
