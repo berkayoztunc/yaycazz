@@ -98,7 +98,7 @@ impl<'info> CreateWizzard<'info> {
     pub fn create_amm(&mut self) -> Result<()> {
         
 
-
+        // TODO : add amm account
         Ok(())
     }
     // cancel event
