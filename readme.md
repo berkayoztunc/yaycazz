@@ -1,11 +1,15 @@
 ![alt text](/screenshots/banner.png "Title")
 
 # Yaycazz
+![alt text](/screenshots/white-logo.png "Title")
 
 Introducing Yaycazz, a new token launch platform built on the Solana blockchain, founded on the principles of freedom and trust. 
 
 
 # Instructions Overview
+
+
+
 
 
 
